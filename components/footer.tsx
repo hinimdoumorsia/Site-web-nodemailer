@@ -1,4 +1,4 @@
-import { Github, Linkedin, MessageCircle, Brain } from "lucide-react";
+import { Github, Linkedin, MessageCircle, Brain, Download } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -52,6 +52,16 @@ export default function Footer() {
             <div className="p-3 bg-gray-700 text-white rounded-full hover:bg-gray-800 transition">
               <Brain size={20} />
             </div>
+          </a>
+
+          {/* Télécharger CV */}
+          <a
+            href="/CV-PRO-2025.pdf"
+            download="CV_Hinimdou_Morsia.pdf"
+            className="p-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition flex items-center justify-center"
+            aria-label="Télécharger CV"
+          >
+            <Download size={20} />
           </a>
         </div>
 
