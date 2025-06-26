@@ -8,7 +8,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-50 w-full border-b backdrop-blur bg-transparent">
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
         {/* Logo ou Titre */}
         <div className="text-lg font-bold">Mon Portfolio</div>
