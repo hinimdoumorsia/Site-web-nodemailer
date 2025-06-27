@@ -15,17 +15,18 @@ export async function POST(req: Request) {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      logger: true,
+      debug: true,
     });
 
-    // Envoi du mail au propriétaire du site
     await transporter.sendMail({
-      from: email,
+      from: process.env.SMTP_USER,
+      replyTo: email,
       to: process.env.SMTP_USER,
       subject: `Message de ${name}`,
       text: message,
     });
 
-    // Réponse automatique au client
     await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: email,
