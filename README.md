@@ -24,3 +24,8 @@ Le site intègre un formulaire de contact fonctionnel avec envoi d’emails via 
 - React Hooks (gestion du formulaire)  
 
 ---
+## 🌐 Déploiement
+
+Le projet est accessible en ligne à cette adresse :  
+👉 [https://site-web-nodemailer.vercel.app](https://site-web-nodemailer.vercel.app)
+
