@@ -1,15 +1,21 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+"use client"
+
+import PasswordProtect from "@/components/PasswordProtect"
 import Image from "next/image"
 import Link from "next/link"
-import Header from "@/components/header"
-import Projects from "@/components/projects"
-import Footer from "@/components/footer"
 
 const projects = [
   {
     title: "Système de surveillance intelligente",
-    description:
-      "Une application Streamlit combinant trois modèles IA (détection de chute, prédiction de chute et détection de somnolence). Elle permet de surveiller une personne en temps réel, de configurer les seuils d’alerte, et de générer des alertes automatiques selon la configuration choisie.",
+    description: `Mise en place d'une application web Streamlit permettant de visualiser et tester en temps réel la démonstration de notre système de surveillance intelligent. Ce projet intègre plusieurs modèles d'intelligence artificielle :
+
+    • Modèle YOLO pour la détection de chute dans une vidéo
+    • Modèle CNN+LSTM pour la prédiction de chute (anticiper avant qu'elle ne survienne)
+    • Modèle SVM pour la détection de somnolence
+
+    Ce projet s'inscrit dans le domaine de la silver économie, un secteur aujourd'hui en pleine expansion qui évolue rapidement. L'objectif est de trouver des solutions innovantes pour aider les personnes âgées à mieux vivre dans les maisons de retraite, qu'elles soient en présence ou non d'autres individus.
+
+    L'application permet de surveiller une personne en temps réel, de configurer les seuils d'alerte, et de générer des alertes automatiques selon la configuration choisie.`,
     image: "/img.jpg",
     link: "https://github.com/hinimdoumorsia/computer_vision",
     docLink: "https://computer-vision2.readthedocs.io/en/latest/",
@@ -29,77 +35,161 @@ const projects = [
     Le site intègre la sécurisation complète ainsi que le déploiement.  
     Les utilisateurs peuvent rechercher des recettes, consulter les détails des plats, et découvrir de nouvelles recettes grâce aux conseils proposés.  
     Voici le lien vers le site : https://lnkd.in/eHstDEJX`,
-    image: "/recette_cuisine.jpg", // Remplace par une image si tu en as
+    image: "/recette_cuisine.jpg",
     link: "https://github.com/hinimdoumorsia/Site_web_recipe",
     siteLink: "https://lnkd.in/eHstDEJX",
   },
+  {
+    title: "SmartHub - Plateforme Éducative Centralisée",
+    description: `Développement d'une application SmartHub permettant de centraliser les ressources d'une plateforme éducative en intégrant des nouvelles technologies d'intelligence artificielle. 
+    
+    Caractéristiques principales :
+    • Chatbot intégré avec plusieurs LLM pour répondre aux différentes difficultés liées à la recherche et aux questions des utilisateurs
+    • Système multi-agent pour la supervision
+    • Technologies utilisées : Spring Boot, Maven, JPA, TypeScript, React, OpenAI, Botpress
+    • Agents IA pour la supervision
+    • Déploiement sur Railway, Render et Vercel
+    
+    L'application combine plusieurs technologies modernes pour offrir une expérience éducative enrichie par l'IA.`,
+    image: "/app_interface.png",
+    link: "https://github.com/hinimdoumorsia/smart-education-platform",
+    docLink: "https://smart-education-platform.readthedocs.io/en/latest/",
+    demoLink: "https://smart-education-platform-3qsejixj2.vercel.app/login",
+    siteLink: "https://www.linkedin.com/feed/update/urn:li:activity:7423897690977042432/",
+    videoLink: "https://www.youtube.com/watch?v=y0RjRl1l7fE",
+  },
+  {
+    title: "Prédiction du Statut des Startups - Pipeline ML",
+    description: `Avec l'arrivée d'Internet et l'explosion massive des données, la concurrence sur le marché est devenue rude et brutale. Beaucoup d'entreprises ne parviennent plus à se positionner correctement et peinent à survivre dans cet environnement.
+
+    Dans ce projet, mon équipe et moi, dans le cadre d'un stage en Data Science, avons mis en place un pipeline complet de machine learning permettant de prédire le statut d'une startup : sera-t-elle acquise par une autre entreprise, entrera-t-elle en bourse, se fermera-t-elle, ou restera-t-elle active ?
+
+    Ce pipeline couvre toutes les étapes essentielles : prétraitement et amélioration des données, feature engineering, développement et entraînement du modèle, jusqu'au déploiement.
+
+    Nous vous invitons à découvrir ci-joint le projet et à explorer ses résultats et insights stratégiques.`,
+    image: "/status_prediction_startup.png",
+    link: "https://github.com/hinimdoumorsia/startup-outcome-prediction-ml-pipeline",
+    demoLink: "https://github.com/akhtarfarhan/startup-predictor",
+  },
 ]
 
-export default function Projects() {
+export default function ProjectsPage() {
   return (
-    <section id="projects" className="container py-12">
-      <h2 className="text-3xl font-bold tracking-tighter mb-8 font-bold">My Projects</h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => (
-          <Card key={index}>
-            <CardHeader>
-              <Link href={project.link} target="_blank" rel="noopener noreferrer">
-                <CardTitle className="hover:underline text-blue-600 font-bold">{project.title}</CardTitle>
+    <PasswordProtect>
+      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "2rem 1rem" }}>
+        <h1 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "2rem" }}>
+          Mes Projets
+        </h1>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: "1.5rem"
+        }}>
+          {projects.map((project, index) => (
+            <div key={index} style={{
+              border: "1px solid #e5e7eb",
+              borderRadius: "0.5rem",
+              padding: "1rem",
+              backgroundColor: "white"
+            }}>
+              <Link href={project.link} target="_blank">
+                <h2 style={{
+                  color: "#16a34a",
+                  fontWeight: "bold",
+                  fontSize: "1.25rem",
+                  marginBottom: "1rem"
+                }}>
+                  {project.title}
+                </h2>
               </Link>
-            </CardHeader>
-            <CardContent>
+              
               <Image
                 src={project.image || "/placeholder.svg"}
                 alt={project.title}
                 width={300}
                 height={200}
-                className="rounded-lg mb-4"
+                style={{
+                  borderRadius: "0.5rem",
+                  width: "100%",
+                  height: "200px",
+                  objectFit: "cover",
+                  marginBottom: "1rem"
+                }}
               />
-              <CardDescription className="font-bold">{project.description}</CardDescription>
-              <div className="mt-4 flex flex-col gap-2">
+              
+              <p style={{
+                fontWeight: "bold",
+                color: "black",
+                whiteSpace: "pre-line",
+                marginBottom: "1rem",
+                fontSize: "0.95rem",
+                lineHeight: "1.5"
+              }}>
+                {project.description}
+              </p>
+              
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 <Link
                   href={project.link}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-white text-gray-800 border border-gray-300 rounded px-3 py-1 text-sm font-bold hover:bg-blue-600 hover:text-white transition-colors"
+                  style={{
+                    backgroundColor: "#16a34a",
+                    color: "white",
+                    padding: "0.25rem 0.75rem",
+                    borderRadius: "0.375rem",
+                    fontSize: "0.875rem",
+                    fontWeight: "bold",
+                    textAlign: "center",
+                    textDecoration: "none"
+                  }}
                 >
-                  Voir le projet
+                  Code source
                 </Link>
+                
                 {project.docLink && (
                   <Link
                     href={project.docLink}
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-white text-gray-800 border border-gray-300 rounded px-3 py-1 text-sm font-bold hover:bg-blue-600 hover:text-white transition-colors"
+                    style={{
+                      backgroundColor: "#16a34a",
+                      color: "white",
+                      padding: "0.25rem 0.75rem",
+                      borderRadius: "0.375rem",
+                      fontSize: "0.875rem",
+                      fontWeight: "bold",
+                      textAlign: "center",
+                      textDecoration: "none"
+                    }}
                   >
                     Documentation
                   </Link>
                 )}
+                
                 {project.demoLink && (
                   <Link
                     href={project.demoLink}
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-white text-gray-800 border border-gray-300 rounded px-3 py-1 text-sm font-bold hover:bg-blue-600 hover:text-white transition-colors"
+                    style={{
+                      backgroundColor: "#16a34a",
+                      color: "white",
+                      padding: "0.25rem 0.75rem",
+                      borderRadius: "0.375rem",
+                      fontSize: "0.875rem",
+                      fontWeight: "bold",
+                      textAlign: "center",
+                      textDecoration: "none"
+                    }}
                   >
-                    Voir la démo
-                  </Link>
-                )}
-                {project.siteLink && (
-                  <Link
-                    href={project.siteLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-white text-gray-800 border border-gray-300 rounded px-3 py-1 text-sm font-bold hover:bg-blue-600 hover:text-white transition-colors"
-                  >
-                    Voir le site
+                    {project.title === "SmartHub - Plateforme Éducative Centralisée" ? "Tester l'application" : 
+                     project.title === "Prédiction du Statut des Startups - Pipeline ML" ? "Tester en production" : 
+                     "Voir la démo"}
                   </Link>
                 )}
               </div>
-            </CardContent>
-          </Card>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
-    </section>
+    </PasswordProtect>
   )
 }

@@ -204,7 +204,7 @@ const sections = [
         <div>
           <h3 className="text-xl font-bold mb-4">Profil</h3>
           <p className="text-white leading-relaxed font-bold">
-            Étudiant en 3<sup>e</sup> année du cycle Ingénieur d'État en Intelligence Artificielle et Data Technologie,
+            Étudiant en 4<sup>e</sup> année du cycle Ingénieur d'État en Intelligence Artificielle et Data Technologie,
             avec une solide formation en sciences de l’ingénieur. Je suis passionné par l’intégration de l’IA dans
             l’industrie et d'autres secteurs connexes, où je conçois des solutions intelligentes pour optimiser les processus et automatiser les décisions.
             <br /><br />

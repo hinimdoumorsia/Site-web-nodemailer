@@ -18,7 +18,7 @@ export default function Hero() {
             HINIMDOU MORSIA GUITAM
           </h2>
           <p className="text-lg text-gray-200 leading-relaxed indent-6">
-            Étudiant en troisième année en Intelligence Artificielle et Technologie des Données, passionné par ces technologies innovantes.
+            Étudiant en quatrième année en Intelligence Artificielle et Technologie des Données, passionné par ces technologies innovantes.
             Je maîtrise plusieurs langages de programmation me permettant d'intégrer des solutions d’IA pour résoudre des problèmes concrets.
           </p>
           <p className="text-lg text-gray-200 leading-relaxed indent-6 mt-4">
