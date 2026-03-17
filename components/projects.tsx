@@ -71,6 +71,32 @@ const projects = [
     link: "https://github.com/hinimdoumorsia/startup-outcome-prediction-ml-pipeline",
     demoLink: "https://github.com/akhtarfarhan/startup-predictor",
   },
+  {
+    title: "OrientBot - Chatbot Intelligent d'Orientation Scolaire",
+    description: `Développement d'un chatbot intelligent spécialisé dans l'orientation scolaire des nouveaux bacheliers, utilisant un système RAG (Retrieval-Augmented Generation) pour fournir des réponses précises et contextuelles.
+
+    Technologies et fonctionnalités :
+    • **LangChain & LCEL** : Orchestration des chaînes RAG et gestion des flux conversationnels
+    • **RAG (Retrieval-Augmented Generation)** : Système de recherche contextuelle dans une base documentaire sur les formations
+    • **Vector Store (Chroma)** : Stockage et recherche des embeddings pour une récupération pertinente
+    • **Groq API** : Accès aux LLM (Llama 3.1) avec des performances optimisées
+    • **Python & Flask** : Création d'APIs REST pour interroger les modèles
+    • **React** : Interface utilisateur intuitive et responsive
+    • **Render** : Déploiement cloud de l'application complète
+
+    Le chatbot aide les étudiants et leurs parents à :
+    • Explorer les filières universitaires adaptées à leur profil
+    • Comprendre les débouchés professionnels
+    • Obtenir des informations précises sur les formations
+    • Prendre des décisions éclairées pour leur orientation
+
+    Le système maintient un historique de conversation pour un accompagnement personnalisé et cohérent.`,
+    image: "/chatbot.PNG",
+    link: "https://github.com/hinimdoumorsia/chatbot-orientation",
+    demoLink: "https://chatbot-orientation-1.onrender.com",
+    siteLink: "https://www.linkedin.com/feed/update/urn:li:activity:7439370656158367744/",
+    docLink: "https://github.com/hinimdoumorsia/chatbot-orientation#readme",
+  },
 ]
 
 export default function ProjectsPage() {
@@ -181,7 +207,8 @@ export default function ProjectsPage() {
                     }}
                   >
                     {project.title === "SmartHub - Plateforme Éducative Centralisée" ? "Tester l'application" : 
-                     project.title === "Prédiction du Statut des Startups - Pipeline ML" ? "Tester en production" : 
+                     project.title === "Prédiction du Statut des Startups - Pipeline ML" ? "Tester en production" :
+                     project.title === "OrientBot - Chatbot Intelligent d'Orientation Scolaire" ? "Tester le chatbot" :
                      "Voir la démo"}
                   </Link>
                 )}
